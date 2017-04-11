@@ -1,6 +1,8 @@
 //parses the csv from sacramento city to useful JSON
+///Users/kenkoyanagi/Projects/SacBusinesses/testcsv.csv
 function csvtojson(csv) {
-
+    print("Starting Script");
+    
     //split to single lines
     var lines = csv.split("\n");
 
