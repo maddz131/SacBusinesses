@@ -1,8 +1,8 @@
 #set up paths and vars
-csvfile = open('testcsv.csv','r')
-jsonfile = open('results.json', 'w')
+csvfile = open('/Users/kenkoyanagi/Projects/SacBusinesses/testcsv.csv','r')
+jsonfile = open('/Users/kenkoyanagi/Projects/SacBusinesses/results.json', 'w')
 
-arr=[]
+arr = []
 headers = []
 
 # Read in the headers/first row
@@ -13,6 +13,9 @@ for header in csvfile.readline().split(','):
 for line in csvfile.readlines():  
   lineStr = ''
   for i,item in enumerate(line.split(',')):
+      if 12 == "SACRAMENTO":
+          if
+
     if i < 28:  #I skip the last two columns for my application
         lineStr+='"'+headers[i] +'" : "' + item + '",\n'
   arr.append(lineStr)

@@ -1,10 +1,11 @@
 //parses the csv from sacramento city to useful JSON
 ///Users/kenkoyanagi/Projects/SacBusinesses/testcsv.csv
+//load("/Users/kenkoyanagi/Projects/SacBusinesses/rawparse.js")
 function csvtojson(csv) {
     print("Starting Script");
-    
+
     //split to single lines
-    var lines = csv.split("\n");
+    var lines = csv.split("&");
 
     //create the array to hold the objects
     var result = [];
@@ -45,7 +46,7 @@ function csvtojson(csv) {
         if(currentline[12] == "SACRAMENTO"){
             var obj = {};
 
-            obj["AccountNumber"] = currentline[0];      //Account Number
+            obj["AccountNumber"] = (currentline[0]).substring(1);      //Account Number
             obj["BusinessName"] = currentline[1];       //Business Name
 
             //If no description, make it "OTHER"
