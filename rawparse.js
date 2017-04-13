@@ -5,7 +5,7 @@ function csvtojson(csv) {
     print("Starting Script");
 
     //split to single lines
-    var lines = csv.split("&");
+    var lines = csv.split("&");                 //Wonder if '\r' is what we should split by instead of '\n'
 
     //create the array to hold the objects
     var result = [];
@@ -16,6 +16,7 @@ function csvtojson(csv) {
     for(var i = 1; i < lines.length; i++) {
         var currentline = lines[i].split(",");
 
+        //CSV [ COLUMN NAME ]                   [ RELEVANT? ]
         //1.  Account Number                    - Keep
         //2.  Business Name                     - Keep
         //3.  Business Description              - Definitely Keep
@@ -113,7 +114,7 @@ function csvtojson(csv) {
                     break;
 
                 case "Renewal Rejected":
-                    obj["CurrentLicenseStatus"] == 12;
+                    obj["CurrentLicenseStatus"] = 12;
                     break;
             }
 
