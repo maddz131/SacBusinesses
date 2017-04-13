@@ -46,24 +46,77 @@ function csvtojson(csv) {
         if(currentline[12] == "SACRAMENTO"){
             var obj = {};
 
-            obj["AccountNumber"] = (currentline[0]).substring(1);      //Account Number
-            obj["BusinessName"] = currentline[1];       //Business Name
+            obj["AccountNumber"] = (currentline[0]).substring(1);       //Account Number
+            obj["BusinessName"] = currentline[1];                       //Business Name
 
-            //If no description, make it "OTHER"
+            //if no description for the business, make it OTHER
             if(currentline[2] == ""){
-                obj["Description"] = "OTHER";        
+                obj["Description"] = "OTHER"
             }
-            else{
-                obj["Description"] = currentline[2];        //Business Description
+            else {
+                obj["Description"] = currentline[2];
             }
             
             obj["ApplicationDate"] = currentline[3]; 
             obj["BusinessStartDate"] = currentline[4]; 
             obj["BusinessCloseDate"] = currentline[5]; 
 
-            //Application Cancelled, License Expired, License Cancelled, License Renewed,
-            //Renewal Active, Application Pending,  
-            obj["CurrentLicenseStatus"] = currentline[6];
+            //Refer to Maddie's google docs for the different categories
+            switch(currentline[6]) {
+                case "":
+                    //if no status, which should never happen, make it 99
+                    obj["CurrentLicenseStatus"] = 99;
+                    break;
+
+                case "Application Active":
+                    obj["CurrentLicenseStatus"] = 1;
+                    break;
+                
+                case "Application Canceled":
+                    obj["CurrentLicenseStatus"] = 2;
+                    break;
+
+                case "Application Pending":
+                    obj["CurrentLicenseStatus"] = 3;
+                    break;
+                
+                case "Application Rejected":
+                    obj["CurrentLicenseStatus"] = 4;
+                    break;
+
+                case "License Canceled":
+                    obj["CurrentLicenseStatus"] = 5;
+                    break;
+
+                case "License Expired":
+                    obj["CurrentLicenseStatus"] = 6;
+                    break;
+
+                case "License Issued":
+                    obj["CurrentLicenseStatus"] = 7;
+                    break;
+
+                case "License Renewed":
+                    obj["CurrentLicenseStatus"] = 8;
+                    break;
+
+                case "Renewal Active":
+                    obj["CurrentLicenseStatus"] = 9;
+                    break;
+
+                case "Renewal Canceled":
+                    obj["CurrentLicenseStatus"] = 10;
+                    break;
+
+                case "Renewal Pending":
+                    obj["CurrentLicenseStatus"] = 11;
+                    break;
+
+                case "Renewal Rejected":
+                    obj["CurrentLicenseStatus"] == 12;
+                    break;
+            }
+
 
             //Only the first 5 digits of zip are relevant for us
             obj["Zip"] = (currentline[14]).substring(0,5);
