@@ -1,6 +1,8 @@
 
 #!/usr/bin/env python
-"""parse.py: Takes Windows CSV, cleans the data and exports as CSV"""
+""" parse.py: Takes Windows CSV, preprocesses and cleans the data, exports to CSV
+    then inserts the data in the mongo database 
+"""
 
 import pandas as pd
 import os
@@ -27,6 +29,8 @@ def cleanCSV(csvFile):
 
     #Replace NaN for Business Description with "OTHER"
     df['Business Description'] = df['Business Description'].fillna(value="OTHER")
+    #Need to strip Business Description of special characters
+    df['Business Description'] = df['Business Description'].str.replace('\W+', ' ')
 
     #Snip extended zip codes to just five characters
     df['Location Zip code'] = df['Location Zip code'].map(lambda x: str(x)[:5])
