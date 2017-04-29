@@ -16,7 +16,7 @@ def main():
     cleanCSV(csvFilename)
 
     #Import the data in the mongodb
-    mongoImport("output.csv", "sacbusinesses", "test2")
+    mongoImport("output.csv", "sacbusinesses", "test3")
 
 
 def cleanCSV(csvFile):
@@ -35,6 +35,9 @@ def cleanCSV(csvFile):
     #Snip extended zip codes to just five characters
     df['Location Zip code'] = df['Location Zip code'].map(lambda x: str(x)[:5])
 
+    #Sort in ascending order by Business Description
+    df.sort_values(['Business Description'], ascending=True, inplace=True)
+
     #Output the cleansed data to CSV
     df.to_csv("output.csv", index=False)
 
@@ -44,7 +47,6 @@ def cleanCSV(csvFile):
 def mongoImport(fileName, database, collection):
     command = "mongoimport -d " + database  + " -c " + collection + " --type csv --file " + fileName + " --headerline"
     os.system(command)
-
 
 if __name__ == '__main__':
     main()
