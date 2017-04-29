@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 #!python3
+=======
+#!/usr/bin/env python
+>>>>>>> origin/master
 """ parse.py: Takes Windows CSV, preprocesses and cleans the data, exports to CSV
     then inserts the data in the mongo database 
 """
@@ -12,7 +16,11 @@ def main():
     print("Starting parse.py ...")
 
     #File of the CSV
+<<<<<<< HEAD
     csvFilename = "testCSV.csv"
+=======
+    csvFilename = "/Users/kenkoyanagi/Projects/SacBusinesses/smalldata.csv"
+>>>>>>> origin/master
     cleanCSV(csvFilename)
 
     #Import the data in the mongodb
