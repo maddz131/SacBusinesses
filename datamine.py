@@ -11,7 +11,7 @@ words = data['Business Description'].values  # as a numpy array
 #third column from CSV - Business Description
 lev_similarity = -1 * np.array([[distance.levenshtein(w1,w2) for w1 in words] for w2 in words])
 
-affprop = sklearn.cluster.AffinityPropagation(affinity="precomputed", damping=0.5)
+affprop = sklearn.cluster.AffinityPropagation(affinity="precomputed", damping=0.1)
 affprop.fit(lev_similarity)
 
 for cluster_id in np.unique(affprop.labels_):

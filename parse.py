@@ -11,7 +11,7 @@ def main():
     print("Starting parse.py ...")
 
     #File of the CSV
-    csvFilename = "/Users/kenkoyanagi/Projects/SacBusinesses/testCSV.csv"
+    csvFilename = "/Users/kenkoyanagi/Projects/SacBusinesses/smalldata.csv"
     cleanCSV(csvFilename)
 
     #Import the data in the mongodb
