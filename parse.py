@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 """ parse.py: Takes Windows CSV, preprocesses and cleans the data, exports to CSV
     then inserts the data in the mongo database 

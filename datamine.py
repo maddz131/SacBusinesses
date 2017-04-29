@@ -1,37 +1,22 @@
 #!/usr/bin/env python
 
-import pandas as pd
-import numpy as np 
-import scipy.linalg as lin
-import Levenshtein as leven
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.cluster import AffinityPropagation
-import itertools
+import numpy as np
+import sklearn.cluster
+import distance
+import pandas as pd 
 
-fields = ["Business Description"]
-df = pd.read_csv("data.csv", skipinitialspace=True, usecols=fields)
+data = pd.read_csv("output.csv")
+data['Business Description']  # as a Series
+words = data['Business Description'].values  # as a numpy array
+#third column from CSV - Business Description
+lev_similarity = -1 * np.array([[distance.levenshtein(w1,w2) for w1 in words] for w2 in words])
 
-df = df["Business Description"].unique()
-print(df)
+affprop = sklearn.cluster.AffinityPropagation(affinity="precomputed", damping=0.5)
+affprop.fit(lev_similarity)
 
-pd.DataFrame(df, columns=['Business Description']).to_csv('uniquevalues.csv')
+for cluster_id in np.unique(affprop.labels_):
+    exemplar = words[affprop.cluster_centers_indices_[cluster_id]]
+    cluster = np.unique(words[np.nonzero(affprop.labels_==cluster_id)])
+    cluster_str = ", ".join(cluster)
+    print(" - *%s:* %s" % (exemplar, cluster_str))
 
-words = np.genfromtxt('uniquevalues.csv', delimiter=",")
-
-(dim,) = words.shape
-
-f = lambda x_y: -leven.distance(x_y[0],x_y[1])
-
-res=np.fromiter(map(f, itertools.product(words, words)), dtype=np.uint8)
-A = np.reshape(res,(dim,dim))
-
-af = AffinityPropagation().fit(A)
-cluster_centers_indices = af.cluster_centers_indices_
-labels = af.labels_
-
-# Distances had to be converted to similarities, I did that by taking the negative of distance. The output is
-
-unique_labels = set(labels)
-for i in unique_labels:
-    print(words[labels==i])
