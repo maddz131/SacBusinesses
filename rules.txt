@@ -1,0 +1,18 @@
+Rules:
+------
+
+1. 	strip but 'retail'
+2. 	strip but 'sales'
+3. 	strip but 'repair'
+4. 	strip but 'cleaning'
+5. 	strip but 'consultant'
+6. 	strip but 'management' 
+7. 	strip but 'retail'
+9. 	strip but 'salon'
+9. strip but 'massage'
+
+10.	string 'sale' --> Sales Category
+11. string 'cleaning' --> cleaning category
+12. string 'repair' --> repair category
+
+Last: check for any remaining entries with 'services'
