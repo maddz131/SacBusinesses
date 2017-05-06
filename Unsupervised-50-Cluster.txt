@@ -1,0 +1,602 @@
+python cluster-lines.py --clusters 50  output.csv
+
+Cluster [28369]:
+gardening lawns tree trimming
+recycling center
+import export of home decorations
+dentist
+cpa
+seller of travel tour operator
+tile installation
+vocational education
+governmental affairs
+asbestos lead paint abatement
+--------
+Cluster [5302]:
+commercial rental
+commercial rental
+commercial rental
+commercial rental
+commercial rental
+commercial rental
+commercial rental
+commercial rental
+commercial rental
+commercial rental
+--------
+Cluster [2318]:
+mobile heavy duty truck repair
+education consult and web srvs
+cut lawns prune repair sprinkl
+interior and exterior painting
+luggage and shoe
+watch repair
+tires and wheels sales
+restaurant and grill
+body piercing and tattooing body jewelery
+detail cars and boats
+--------
+Cluster [2130]:
+private service worker
+cellular sales and service
+vacant apt service repair
+gardening
+personal chef service
+security guard service
+sale service tire wheels
+sales service of exit lights
+wood flooring carpet service
+tutorial service
+--------
+Cluster [2041]:
+whole sale auto sales
+catalog sales
+mail order sales on new used volvo car parts
+auto sales
+used car dealer retail sales
+large picture sales
+r v sales
+equipment sales
+auto sales
+sales of diesel auto parts sales
+--------
+Cluster [1912]:
+general services
+legal services
+garden services
+graphic art services
+web site services
+legal services form completion
+medical services
+contract services temp
+legal services
+personnel services
+--------
+Cluster [1797]:
+software consulting
+business consulting enhancemen
+cpa accounting consulting
+consulting financial planning
+consulting
+organization development consulting
+engineering consulting
+government consulting
+wireless consulting
+software development consulting
+--------
+Cluster [1682]:
+self wash grooming retail
+retail
+rental retail of formal wear
+retail jeweler
+general retail import
+retail sales
+retail liquor grocery
+retail
+on line retail sales
+retail sales of t shirts
+--------
+Cluster [1524]:
+residential rental
+residential rental
+residential rental
+residential rental
+residential rental
+residential rental
+residential rental
+residential rental
+residential rental
+residential rental
+--------
+Cluster [1420]:
+restaurant
+restaurant bar
+restaurant
+restaurant
+restaurant
+restaurant
+restaurant
+restaurant
+restaurant
+restaurant
+--------
+Cluster [1364]:
+taxi driver
+taxi driver
+taxi driver cap city
+taxi driver
+taxi driver
+taxi driver bc
+taxi driver
+taxi driver
+taxi driver
+taxi driver yellow
+--------
+Cluster [1357]:
+cleaning
+linen cleaning
+concierge service dry cleaning
+cleaning unoccupied homes
+carpet upholstery cleaning
+cleaning janitorial landscapg
+dry cleaning laundry pickup
+cleaning services
+general cleaning painting
+carpet upholstery cleaning
+--------
+Cluster [1282]:
+truck auto repair
+auto body works
+auto repair
+auto transportation
+auto body
+auto repair
+auto dealer
+minor auto body repairs
+auto repair
+auto repair
+--------
+Cluster [1217]:
+janitorial services
+janitorial service
+janitorial cleaning
+commercial janitorial cleaning
+janitorial
+janitorial
+janitorial
+janitorial
+janitorial
+janitorial service
+--------
+Cluster [1202]:
+law firm
+law office
+law office
+attorney at law
+law firm
+law office
+law firm
+law firm
+law firm
+law office
+--------
+Cluster [1137]:
+architecture interior design
+interior design
+interior design
+website design develpmont serv
+fashion design
+graphic design
+interior design show rooms
+graphic design
+graphic design
+architectural design
+--------
+Cluster [1019]:
+handyman
+handyman
+handyman services
+handyman
+handyman
+handyman
+handyman service
+handyman
+handyman
+handyman services
+--------
+Cluster [1004]:
+general building contractor
+roofing contractor
+cable construction
+contractor
+fence contractor
+home construction
+construction
+general contractor
+general contractor construction
+heating air cond contractor
+--------
+Cluster [993]:
+real estate management
+real estate broker
+real estate investments
+real estate broker
+real estate owner developer
+real estate loans
+real estate broker office
+real estate
+real estate development
+real estate
+--------
+Cluster [950]:
+fast food
+food service
+food vendor
+fast food restaurant
+food product manufacturer distributor
+taqueria mexican food
+mexican food restaurant
+food vendor
+fast food
+vending machine food drink
+--------
+Cluster [938]:
+donut shop
+shop to shop repair
+beauty shop
+sandwich shop
+copy print shop
+barber shop
+gift shop and smoke shop
+coffee shop
+tattoo shop
+sandwich shop
+--------
+Cluster [926]:
+cigarettes convenience store
+grocery store
+retail store
+retail grocery store
+grocery store
+importer sales natural store
+thrift store
+retail store
+retail store preteen girls
+retail store cosmetics skin
+--------
+Cluster [832]:
+lawn maintenance service
+service repair maintenance
+landscape
+maintenance
+yard maintenance hauling
+maintenance service
+building maintenance janitor
+janitorial maintenance
+building maintenance service
+aquarium maintenance
+--------
+Cluster [831]:
+administrative office for hospice services
+administrative office only
+administrative office for hospice services
+office only
+candle sales home office
+warehouse office carwash gas s
+legal office
+law office of ilene g block
+pediatric dental office
+office cleaning
+--------
+Cluster [803]:
+tanning salon
+nail salon
+salon
+salon
+salon
+hair salon
+salon
+nail salon
+hair salon
+nail salon
+--------
+Cluster [768]:
+lawn care
+provide home health care to patients homes
+family day care
+child care
+skin and spa care
+lawn garden care
+lawn care
+health care services
+(N) hr child care svcs
+lawn care service
+--------
+Cluster [743]:
+artisit selling hand made items online and person to person
+selling mortgage payment plans
+selling barbequed dinners
+health weight loss products
+driver trng products service
+selling merchandise via online website
+selling used new merchandise
+mental health products
+selling flowers
+selling toys ropa cosmetics sosas
+--------
+Cluster [709]:
+clothing sales purchases
+repair clothing
+lingerie clothing
+clothing alterations
+retail women s clothing
+clothing sales
+online clothing sales
+retail clothing
+clothing retail wholesale
+formal clothing store
+--------
+Cluster [683]:
+education alignment consultant
+business consultant
+education alignment consultant
+moving consultant
+software consultant
+consultant
+travel consultant
+entertainment consultant
+meeting consultant
+engineering consultant
+--------
+Cluster [663]:
+design visual and experiential resources for sustainable
+admin headquarters for distrib
+hot dog carts for hire not a food cart stand
+design for imprinted goods
+consulting for erate services
+locating cars for buyers
+care provider for elder man
+mailing letters for businesses
+publishing company for songs writing books etc
+examiner for crane operators
+--------
+Cluster [628]:
+massage therapy
+massage therapist
+massage studio
+massage therapist
+massage therapy
+mobile certified massage therapist
+therapeutic chair massage
+mobile massage
+massage
+massage therapy
+--------
+Cluster [626]:
+computer based marketing
+computer software
+computer services
+computer sales rental
+computer office equipment sls
+computer sales services
+computer related services
+computer consulting sales
+it consulting computer related service contracts
+computer repair
+--------
+Cluster [614]:
+internet bumper stickers
+internet sales
+internet sales ebay
+internet website mrkt dvlpmt
+internet sales of e book textbooks and paperbacks
+internet sales
+internet marketing
+internet sales
+internet catalog sales
+internet advertising services
+--------
+Cluster [601]:
+landscaping gardening
+landscaping
+landscaping
+landscaping
+landscaping maintenance
+landscaping
+landscaping and lawn service
+landscaping comm resident
+landscaping
+landscaping sprinklers
+--------
+Cluster [590]:
+house cleaning
+house cleaning interior
+house cleaning service
+house cleaning services
+house cleaning
+house cleaning
+house cleaning
+house cleaning
+house cleaning
+boarding house
+--------
+Cluster [548]:
+parking management
+selling parts to property management companies
+management promotion
+technology management consulting
+management consulting
+residential property management
+management
+parking garage garage management
+property management
+management consulting
+--------
+Cluster [533]:
+cellphone accessories
+handbags and accessories
+cell phones cell phone accessories
+retailer cell phone and accessories
+women s clothing and accessories
+handmade accessories clothing
+cell phone and accessories
+create design sew clothing and accessories
+formal party dresses accessories
+online sales of apparel and accessories and original dvd s r
+--------
+Cluster [506]:
+video shooting photography
+immigration photography svc
+online stock photography
+photography and photographic services
+photography and video
+photography services
+fine art photography
+wedding photography
+advertising photography
+photography
+--------
+Cluster [475]:
+retail (N) jewelry more
+custom jewelry
+arts crafts handmade jewelry
+costume jewelry
+crochet clay handmade jewelry
+jewelry
+resale jewelry
+jewelry design
+handcrafted jewelry
+create and sell jewelry
+--------
+Cluster [453]:
+income tax preparation
+notary public income tax svc
+financial planning tax services
+residential rental tax account
+tax planning preparation
+tax preparation bookeeping
+tax preparation financial svcs
+tax prep bookkeeping service
+cpa firm audit tax consulting services
+tax prep
+--------
+Cluster [414]:
+adult entertainer
+adult entertainer
+adult entertainer
+adult entertainer
+adult entertainer
+adult entertainer
+adult entertainer
+adult entertainer
+adult entertainer
+adult entertainer
+--------
+Cluster [366]:
+salon stylist
+hair stylist
+hair stylist
+hair stylist
+hair stylist
+hair stylist
+hair stylist
+hair stylist
+hair stylist owner
+hair stylist
+--------
+Cluster [355]:
+beauty salon
+beauty salon
+beauty salon spa
+beauty salon services
+beauty salon
+beauty salon
+beauty salon
+barber beauty salon shop
+beauty salon services
+beauty salon
+--------
+Cluster [348]:
+independent cab driver
+cab driver yellow cab
+taxi driver yellow cab
+taxi driver yellow cab
+smart cab driver
+taxi driver orange cab
+yellow cab company
+taxi cab driver yellow cab
+pedi cab driver independent
+cab driver yellow cab
+--------
+Cluster [344]:
+rental ofc furniture supplies
+pet supplies accessories gifts
+beauty products and supplies
+beauty supplies wigs hair prod
+motel supplies floor coverings
+medical wear supplies
+beauty supplies
+retail kitchen bath supplies
+school apparel supplies
+horse supplies
+--------
+Cluster [294]:
+catering business
+food preparaton and catering
+catering
+catering company
+catering and wedding planning
+catering
+aircraft private catering
+full service catering
+catering truck
+bbq catering
+--------
+Cluster [276]:
+other
+other
+other
+other
+other
+other
+other
+other
+other
+other
+--------
+Cluster [270]:
+flea market
+selling new clothes at flea market
+flea market small accessories
+consulting market research video
+flee market sales
+flea market
+meat market
+jewelry clothing flea market
+market research
+flea market sales
+--------
+Cluster [67]:
+hobbies and electronics
+install electronics in vehicle
+internet sell of electronics
+home auto electronics and tint
+buy used electronics via ecoatm kiosk machine
+buying selling of goods and services electronics wholesale
+electronics advisor
+electronics transportation
+sell electronics cell phones accessories
+consumer electronics install
+--------
+Cluster [16]:
+the holding company
+holding co for rentals
+real estate holding company
+acquiring holding real estat
+real estate holding
+holding company buy real prope
+real estate holding co
+real estate holding
+holding company
+real este holding gross pyrll
+--------

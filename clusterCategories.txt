@@ -6,12 +6,12 @@ Taxi: yellow, driver, taxi, cab
 Yard Services: Tree, lawn, landscape, gardening, prune, yard, garden
 Auto: truck, car, automobile, auto
 Contractor: contractor, construction,workers, consulting/consultant (strip word besides those two)
-Management: residential, commercial, management(strip out everything)
+Management: residential, commercial, management(strip out everything), hospice
 Retail/sales: retail (strip out everything but), sales(strip everything but), clothing, accessories, jewelry, supplies
 Food: food , restaurant, vending, catering, bar
-Health: medical, dental, dentist, nurse, cna, registered nurse, rn, optometrist, health care, heathcare, health, therapy, acupuncture
+Health: medical, dental, dentist, nurse, cna, registered nurse, rn, optometrist, health care, heathcare, health, therapy, acupuncture,
 Art: design, video, photography
 Beauty: skin, skincare, cosmetics, salon (strip everything but), spa,  massage(strip everything but), facial, hair, beauty
 Technology: computer, internet, electronics, technology, tech
 Accounting: Tax, CPA, income
-Adult Entertainment:  dancers, entertainer
+Adult Entertainment:  adult dancers, adult entertainer
