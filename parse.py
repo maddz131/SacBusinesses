@@ -11,9 +11,9 @@ def main():
     print("Starting parse.py ...")
 
     #File of the CSV
-    csvFilename = "/Users/kenkoyanagi/Projects/SacBusinesses/realdata.csv"
-    cleanCSV(csvFilename)
 
+    csvFilename = "realdata.csv"
+    cleanCSV(csvFilename)
     #Import the data in the mongodb
     mongoImport("output.csv", "sacbusinesses", "test4")
 
@@ -28,11 +28,11 @@ def cleanCSV(csvFile):
     #Get rid of rows that don't have a Business Description (NaN)
     #Do not want to do this for the ones we will put in the database. Do this in clustering
     #df = df.dropna(subset = ['Business Description'])
-    
+
     #Replace 'A/C' with AC - Special case
     df['Business Description'] = df['Business Description'].str.replace('A/C', 'AC')
 
-    #Need to strip Business Description of special characters and numbers. Strip leading and trailing spaces. 
+    #Need to strip Business Description of special characters and numbers. Strip leading and trailing spaces.
     #All uppercase characters.
     df['Business Description'] = df['Business Description'].str.replace('[^a-zA-Z]', ' ').str.strip().str.upper()
 
@@ -62,14 +62,3 @@ def mongoImport(fileName, database, collection):
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-
