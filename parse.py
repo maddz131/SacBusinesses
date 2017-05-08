@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-""" parse.py: Takes CSV, preprocesses and cleans the data, exports to CSV
-    then inserts the data in the mongo database.
+""" parse.py: Takes CSV, preprocesses (data reduction and data cleaning) the data, 
+    exports to CSV, then inserts the data in the mongo database.
 """
 
 import pandas as pd
@@ -25,10 +25,6 @@ def cleanCSV(csvFile):
     #We only want the businesses that are in Sacramento
     df = df[df['Location City'] == "SACRAMENTO"]
 
-    #Get rid of rows that don't have a Business Description (NaN)
-    #Do not want to do this for the ones we will put in the database. Do this in clustering
-    #df = df.dropna(subset = ['Business Description'])
-    
     #Replace 'A/C' with AC
     df['Business Description'] = df['Business Description'].str.replace('A/C', 'AC')
 
@@ -47,6 +43,12 @@ def cleanCSV(csvFile):
 
     #ake the license status uppercase
     df['Current License Status'] = df['Current License Status'].str.upper()
+
+    #Fix the formatting of the dates so R can recognize it as a valid date. 
+    #Formatting it to YYYY/MM/DD
+    df['Application Date'] = pd.to_datetime(df['Application Date'])
+    df['Business Start Date'] = pd.to_datetime(df['Business Start Date'])
+    df['Business Close Date'] = pd.to_datetime(df['Business Close Date'])
 
     #Sort in ascending order by Business Description
     df.sort_values(['Business Description'], ascending=True, inplace=True)
