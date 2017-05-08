@@ -28,8 +28,13 @@ def cleanCSV(csvFile):
     #Get rid of rows that don't have a Business Description (NaN)
     #Do not want to do this for the ones we will put in the database. Do this in clustering
     #df = df.dropna(subset = ['Business Description'])
+<<<<<<< HEAD
 
     #Replace 'A/C' with AC - Special case
+=======
+    
+    #Replace 'A/C' with AC
+>>>>>>> 49af0d30962eda01f546b760dc61d546e34744db
     df['Business Description'] = df['Business Description'].str.replace('A/C', 'AC')
 
     #Need to strip Business Description of special characters and numbers. Strip leading and trailing spaces.
@@ -44,6 +49,9 @@ def cleanCSV(csvFile):
 
     #Snip extended zip codes to just five characters
     df['Location Zip code'] = df['Location Zip code'].map(lambda x: str(x)[:5])
+
+    #ake the license status uppercase
+    df['Current License Status'] = df['Current License Status'].str.upper()
 
     #Sort in ascending order by Business Description
     df.sort_values(['Business Description'], ascending=True, inplace=True)
