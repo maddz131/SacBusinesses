@@ -7,6 +7,7 @@ from collections import defaultdict
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 import collections
+import os
 
 #50 clusters seem to be near a sweet spot
     
@@ -39,9 +40,7 @@ def cluster(filename, clusters, sample):
 
     s_clusters = sorted(clusters.values(), key=lambda l: -len(l))
 
-    f = open("clusters.txt", 'w')
-    writelines =[]
-
+    #columns to add
     goodCluster = {}
     clusterDescription = {}
     representationPer = {}
@@ -50,16 +49,7 @@ def cluster(filename, clusters, sample):
     for idx, cluster in enumerate(s_clusters):
 
         s =  'Cluster [%s]:' % len(cluster)
-        writelines.append(s)
         print(s)
-    
-        for line in cluster:
-            writelines.append(line)
-        writelines.append('--------')
-
-        if len(cluster) > sample:
-            out = random.sample(cluster, sample)
-            #print(out)
 
         words = []
         for line in cluster:
@@ -112,19 +102,20 @@ def cluster(filename, clusters, sample):
     df["Cluster Description"] = df["Cluster"].map(clusterDescription)
     df["Cluster Label"] = df["Cluster"].map(clusterLabel)
 
-    #UPDATE
-    #Take out the bad rows 
-    df = df[df['Good Cluster'] == "GOOD"]
-
     #Order the rows by cluster 
     df.sort_values(['Cluster'], ascending=True, inplace=True)
 
     #Write dataframe to CSV
     df.to_csv("clusteredOutput.csv", index=False)
 
-    for l in writelines:
-        f.write("%s\n" % l)
-    f.close()
+    #Put in mongo
+    mongoImport("clusteredOutput.csv", "sacbusinesses", "clustered")
+
+
+def mongoImport(fileName, database, collection):
+    command = "mongoimport -d " + database  + " -c " + collection + " --type csv --file " + fileName + " --headerline"
+    os.system(command)
+    print("Imported into Mongo DB = [%s]; Collection = [%s] " % (database, collection))
 
 if __name__ == '__main__':
     cluster()
