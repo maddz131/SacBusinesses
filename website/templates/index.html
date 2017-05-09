@@ -8,17 +8,57 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://www.w3schools.com/lib/w3data.js"></script>
+<style>
 
-{{html|safe}}
+/*.content {
+    border: 1px solid black;
+    background-color: lightblue;
+    width: 50%;
+    padding-top: 50px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}*/
+</style>
+<body>
 
-<script>
-w3IncludeHTML();
-</script>
-<ul>
-      {% for num in data: %}
-          <li>{{num}}</li> <!-- complete code for json display--->
-          {% endfor %}
+<div class = "heads">
+  <h2>Data Mart:</h2>
+</div>
+Search Sacramento businesses by
+{% block content %}
+
+<div class="btn-group">
+
+  <form name="status" action="{{ url_for('update') }}" method="POST">
+    <select name="status">
+       {% for option in statuses %}
+       <option value="{{option}}">{{option}}</li>
+       {% endfor %}
     </ul>
+    </select>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}
 
+<!--<div class="btn-group">
+      <button class="btn">business category</button>
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+       <li><a tabindex="-1" href="#">Item I</a></li>
+       <li><a tabindex="-1" href="#">Item II</a></li>
+       <li><a tabindex="-1" href="#">Item III</a></li>
+       <li class="divider"></li>
+       <li><a tabindex="-1" href="#">Other</a></li>
+    </ul>
+</div>-->
+
+<div class = "content">
+  <br><br>
+  {{html|safe}}
+</div>
 </body>
 </html>
