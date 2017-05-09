@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-""" parse.py: Takes CSV, preprocesses (data reduction and data cleaning) the data, 
+""" parse.py: Takes CSV, preprocesses (data reduction and data cleaning) the data,
     exports to CSV, then inserts the data in the mongo database.
 """
 
@@ -11,9 +11,9 @@ def main():
     print("Starting parse.py ...")
 
     #File of the CSV
-    csvFilename = "/Users/kenkoyanagi/Projects/SacBusinesses/realdata.csv"
-    cleanCSV(csvFilename)
 
+    csvFilename = "realdata.csv"
+    cleanCSV(csvFilename)
     #Import the data in the mongodb
     mongoImport("output.csv", "sacbusinesses", "test4")
 
@@ -25,10 +25,16 @@ def cleanCSV(csvFile):
     #We only want the businesses that are in Sacramento
     df = df[df['Location City'] == "SACRAMENTO"]
 
+
+    #Get rid of rows that don't have a Business Description (NaN)
+    #Do not want to do this for the ones we will put in the database. Do this in clustering
+    #df = df.dropna(subset = ['Business Description'])
+
     #Replace 'A/C' with AC
+
     df['Business Description'] = df['Business Description'].str.replace('A/C', 'AC')
 
-    #Need to strip Business Description of special characters and numbers. Strip leading and trailing spaces. 
+    #Need to strip Business Description of special characters and numbers. Strip leading and trailing spaces.
     #All uppercase characters.
     df['Business Description'] = df['Business Description'].str.replace('[^a-zA-Z]', ' ').str.strip().str.upper()
 
@@ -44,7 +50,7 @@ def cleanCSV(csvFile):
     #ake the license status uppercase
     df['Current License Status'] = df['Current License Status'].str.upper()
 
-    #Fix the formatting of the dates so R can recognize it as a valid date. 
+    #Fix the formatting of the dates so R can recognize it as a valid date.
     #Formatting it to YYYY/MM/DD
     df['Application Date'] = pd.to_datetime(df['Application Date'])
     df['Business Start Date'] = pd.to_datetime(df['Business Start Date'])
@@ -67,14 +73,3 @@ def mongoImport(fileName, database, collection):
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-
