@@ -60,7 +60,7 @@ def cleanCSV(csvFile):
     #Formatting it to YYYY/MM/DD
     df['Application Date'] = pd.to_datetime(df['Application Date'])
     df['Business Start Date'] = pd.to_datetime(df['Business Start Date'])
-    df['Business Close Date'] = pd.to_datetime(df['Business Close Date'])
+    df['Business Close Date'] = pd.to_datetime(df['Business Closec Date'])
 
     #Sort in ascending order by Business Description
     df.sort_values(['Business Description'], ascending=True, inplace=True)
