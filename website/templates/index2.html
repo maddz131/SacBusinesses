@@ -13,7 +13,7 @@
 
     /* Set gray background color and 100% height */
     .sidenav {
-      background-color: #f1f1f1;
+      background-color: rgba(45, 119, 119, 0.75);
       height: 100%;
       width:10%
       float:left;
@@ -36,6 +36,18 @@
       }
       .row.content {height: auto;}
     }
+    h2{
+      font-family: monospace;
+      font-weight: bold;
+      color: black;
+    }
+    a{
+      color: white;
+    }
+
+    h3{
+      color: #333;
+    }
     #page {
     position: relative;
     width: 75%;
@@ -53,40 +65,45 @@
     <div class="col-sm-3 sidenav">
       <h2>Sacramento's Booming Business</h2><br>
       <h3><a href="http://localhost:5000/heatmap">Heat Map</a></h3>
-      <h3><a href="http://localhost:5000/datamart">Data Mart</a></h3>
 
         <h3>Business Forecast:</h3>
 <ul class="nav nav-pills nav-stacked">
-        <li><a href="#art">Art</a></li>
-        <li><a href="#Attorney">Attorney</a></li>
+  <ul>
+        <li><a href="#General">General Growth</a></li>
+        <li><a href="#Consulting">Consulting</a></li>
+        <li><a href="#Cleaning">Cleaning</a></li>
         <li><a href="#Beauty-Salon">Beauty-Salon</a></li>
         <li><a href="#Commercial-Rental">Commercial-Rental</a></li>
-        <li><a href="#Construction">Construction</a></li>
+        <li><a href="#Auto">Auto</a></li>
         <li><a href="#Adult Entertainer">Adult Entertainer</a></li>
-        <li><a href="#General">General</a></li>
-        <li><a href="#Residential Rental">Residential Rental</a></li>
+        <li><a href="#Repair">Repair</a></li>
         <li><a href="#Restaurant">Restaurant</a></li>
-        <li><a href="#Retail">Retail</a></li>
-        <li><a href="#Taxi Driver">Taxi Driver</a></li>
+        <li><a href="#Massage">Massage</a></li>
+        <li><a href="#Maintenance">Maintenance</a></li>
 
-      </ul><br>
+      </ul></ul><br>
     </div>
 
 
 <div id=page>
 
     <div class="col-sm-9">
-      <h4>Trends in Business</h4>
-      <hr>
-      <a name = "art"></a>
-      <h2>Art</h2>
-      <img src="static/images/ART.png" alt="ART" style="width:100%;">
+
+      <a name = "General Growth"></a>
+      <h2>General Growth</h2>
+      <img src="static/images/GENERAL.png" alt="GENERAL" style="width:100%;">
       <br><br>
 
       <hr>
-      <a name = "Attorney"></a>
-      <h2>Attorney</h2>
-      <img src="static/images/ATTORNEY.png" alt="ATTORNEY" style="width:100%;">
+      <a name = "Consulting"></a>
+      <h2>Consulting</h2>
+      <img src="static/images/CONSULTING.png" alt="Consulting" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Cleaning"></a>
+      <h2>Cleaning</h2>
+      <img src="static/images/CLEANING.png" alt="Cleaning" style="width:100%;">
       <br><br>
 
       <hr>
@@ -102,27 +119,21 @@
       <br><br>
 
       <hr>
-      <a name = "Construction"></a>
-      <h2>Construction</h2>
-      <img src="static/images/CONSTRUCTION.png" alt="CONSTRUCTION" style="width:100%;">
+      <a name = "Auto"></a>
+      <h2>Auto</h2>
+      <img src="static/images/AUTO.png" alt="Auto" style="width:100%;">
       <br><br>
-      <h4><small>RECENT POSTS</small></h4>
+
       <hr>
       <a name = "Adult Entertainer"></a>
       <h2>Adult Entertainer</h2>
       <img src="static/images/ENTERTAINER-ADULT.png" alt="ENTERTAINER-ADULT" style="width:100%;">
       <br><br>
-      <h4><small>RECENT POSTS</small></h4>
-      <hr>
-      <a name = "General"></a>
-      <h2>General</h2>
-      <img src="static/images/GENERAL.png" alt="GENERAL" style="width:100%;">
-      <br><br>
 
       <hr>
-      <a name = "Residential Rental"></a>
-      <h2>Residential Rental</h2>
-      <img src="static/images/RESIDENTIAL-RENTAL.png" alt="RESIDENTIAL-RENTAL" style="width:100%;">
+      <a name = "Repair"></a>
+      <h2>Repair</h2>
+      <img src="static/images/REPAIR.png" alt="Repair" style="width:100%;">
       <br><br>
 
       <hr>
@@ -132,15 +143,15 @@
       <br><br>
 
       <hr>
-      <a name = "Retail"></a>
-      <h2>Retail</h2>
-      <img src="static/images/RETAIL.png" alt="RETAIL" style="width:100%;">
+      <a name = "Massage"></a>
+      <h2>Massage</h2>
+      <img src="static/images/MASSAGE.png" alt="Massage" style="width:100%;">
       <br><br>
 
       <hr>
-      <a name = "Taxi Driver"></a>
-      <h2>Taxi Driver</h2>
-      <img src="static/images/TAXI-DRIVER.png" alt="TAXI-DRIVER" style="width:100%;">
+      <a name = "Maintenance"></a>
+      <h2>Maintenance</h2>
+      <img src="static/images/MAINTENANCE.png" alt="Maintenance" style="width:100%;">
       <br><br>
 
 
@@ -148,10 +159,6 @@
   </div>
 </div>
 </div>
-
-<footer class="container-fluid">
-  <p>Footer Text</p>
-</footer>
 
 </body>
 </html>

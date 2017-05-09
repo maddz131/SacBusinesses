@@ -9,7 +9,7 @@ from bson import Binary, Code
 from jinja2 import Template
 from bson.json_util import dumps
 from json2table import convert
-import html
+import HTML
 
 app = Flask(__name__)
 #app.config['MONGO_URI'] = 'mongodb://localhost'
