@@ -49,8 +49,9 @@
       <button onclick="changeOpacity()">Change opacity</button>
     </div>
     <div id="map"></div>
-    <script>
 
+
+    <script>
         var map, heatmap;
 
         function initMap() {
@@ -63,7 +64,7 @@
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: getPoints(),
             map: map,
-            radius: 35
+            radius: 50
         });
         }
 
@@ -92,14 +93,15 @@
         }
 
         function changeRadius() {
-        heatmap.set('radius', heatmap.get('radius') ? null : 35);
+        heatmap.set('radius', heatmap.get('radius') ? null : 50);
         }
 
         function changeOpacity() {
         heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
         }
 
-        // Heatmap data: 500 Points
+
+        // Heatmap data
         function getPoints() {
         return [new google.maps.LatLng(38.5793468952, -121.487314132),
             new google.maps.LatLng(38.5793468952, -121.487314132),

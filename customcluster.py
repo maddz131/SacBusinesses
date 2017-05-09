@@ -47,10 +47,10 @@ def cluster(filename, clusters, sample):
     representationPer = {}
     clusterLabel = {}
 
+    #cluster mapping for linking business description to cluster number
     clusterMapping = {}
 
     for idx, cluster in enumerate(s_clusters):
-
         s =  'Cluster [%s] and Cluster #%d:' % (len(cluster), idx)
         print(s)
 

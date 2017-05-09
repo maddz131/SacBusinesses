@@ -25,13 +25,7 @@ def cleanCSV(csvFile):
     #We only want the businesses that are in Sacramento
     df = df[df['Location City'] == "SACRAMENTO"]
 
-
-    #Get rid of rows that don't have a Business Description (NaN)
-    #Do not want to do this for the ones we will put in the database. Do this in clustering
-    #df = df.dropna(subset = ['Business Description'])
-
     #Replace 'A/C' with AC
-
     df['Business Description'] = df['Business Description'].str.replace('A/C', 'AC')
 
     #Need to strip Business Description of special characters and numbers. Strip leading and trailing spaces.

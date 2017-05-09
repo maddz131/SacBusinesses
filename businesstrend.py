@@ -41,6 +41,7 @@ def main():
     for key in monthly.keys():
         f.write(str(key) + " , " + str(monthly[key]) + "\n");
 
+
     #############################################################################
     #Change df to only include the good clusters
     df = df[df['Good Cluster'] == "GOOD"]
