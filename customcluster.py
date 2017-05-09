@@ -30,7 +30,8 @@ def cluster(filename, clusters, sample):
     doc_feat = TfidfVectorizer().fit_transform(lines)
 
     #kmeans
-    km = KMeans(clusters).fit(doc_feat)
+    km = KMeans(clusters)
+    km.fit(doc_feat)
 
     k = 0
     clusters = defaultdict(list)
@@ -46,13 +47,20 @@ def cluster(filename, clusters, sample):
     representationPer = {}
     clusterLabel = {}
 
+    clusterMapping = {}
+
     for idx, cluster in enumerate(s_clusters):
 
-        s =  'Cluster [%s]:' % len(cluster)
+        s =  'Cluster [%s] and Cluster #%d:' % (len(cluster), idx)
         print(s)
 
         words = []
         for line in cluster:
+            #Creating a mapping dictionary from description to cluster number
+            if line not in clusterMapping:
+                clusterMapping[line] = idx;
+
+            #work on the words
             word = line.split(" ")
             for w in word:
                 if w != "":
@@ -93,8 +101,9 @@ def cluster(filename, clusters, sample):
         clusterLabel[idx] = label
 
     #Create a new column named 'Cluster' to show which cluster the row is in
-    x = km.fit_predict(doc_feat)
-    df['Cluster'] = x
+    x = km.predict(doc_feat)
+    print(x)
+    df['Cluster'] = df["Business Description"].map(clusterMapping)
 
     #Map the dictionaries to the dataframe based on the cluster number
     df["Good Cluster"] = df["Cluster"].map(goodCluster)
@@ -113,7 +122,10 @@ def cluster(filename, clusters, sample):
 
 
 def mongoImport(fileName, database, collection):
+    remove = "db." + collection + ".drop()"
+    os.system(remove)
     command = "mongoimport -d " + database  + " -c " + collection + " --type csv --file " + fileName + " --headerline"
+    #mongoimport -d sacbusinesses -c clustered --type csv --file clusteredOutput.csv --headerline
     os.system(command)
     print("Imported into Mongo DB = [%s]; Collection = [%s] " % (database, collection))
 

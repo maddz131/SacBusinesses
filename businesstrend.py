@@ -66,8 +66,8 @@ def main():
                 else:
                     subMonthly[row['Business Close Date']] = -1
 
-        fileName = "0Cluster_" + label + ".csv"
-        fileName = fileName.replace("/", "-")
+        label = label.replace("/", "-")
+        fileName = "ClusterCategories/0Cluster_" + label + ".csv"
         
         f = open(fileName, 'w')
         for key in subMonthly.keys():
