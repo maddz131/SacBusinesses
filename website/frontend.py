@@ -8,7 +8,7 @@ from bson import Binary, Code
 from jinja2 import Template
 from bson.json_util import dumps
 from json2table import convert
-import HTML
+import html
 
 app = Flask(__name__)
 #app.config['MONGO_URI'] = 'mongodb://localhost'
@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def index():
-    test = mongo.db.test4.find({"Business Description":"DRIVER"}) #mongo returns bson
+    test = mongo.db.clustered.find({"Cluster Label":"AUTO"}, {'_id':0, 'Account Number':0, 'Good Cluster': 0, 'Cluster':0, 'Representation':0, 'Cluster Description':0, 'Location City':0}) #mongo returns bson
     test2 = dumps(test) #converst bson tojson
     data = json.loads(test2)
     build_direction = "TOP_TO_BOTTOM"
