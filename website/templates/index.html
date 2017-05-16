@@ -25,22 +25,7 @@
 <div class = "heads">
   <h2>Data Mart:</h2>
 </div>
-Search Sacramento businesses by
-{% block content %}
 
-<div class="btn-group">
-
-  <form name="status" action="{{ url_for('update') }}" method="POST">
-    <select name="status">
-       {% for option in statuses %}
-       <option value="{{option}}">{{option}}</li>
-       {% endfor %}
-    </ul>
-    </select>
-    <input type="submit" value="Submit">
-  </form>
-</div>
-{% endblock %}
 
 <!--<div class="btn-group">
       <button class="btn">business category</button>

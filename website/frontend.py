@@ -42,7 +42,7 @@ def datamart():
     for obj in range(len(data)):
         json_object = data[obj]
         html = html+convert(json_object, build_direction=build_direction, table_attributes=table_attributes)
-    return render_template('index.html', statuses=statuses, html=html)
+    return render_template('index.html', html=html)
 
 
 @app.route('/datamart/update',methods = ['POST'])
