@@ -81,13 +81,14 @@ block body
                         var option1 = document.getElementById('dropDown1').value;
                         var option2 = document.getElementById('dropDown2').value;
                         var option3 = document.getElementById('dropDown3').value;
-                        var URL = 'http://localhost:3000/' + option1 + '/' + option2 + '/' + option3;
-                        window.location.href = 'http://localhost:3000/' + option1 + '/' + option2 + '/' + option3;
+                        var option4 = document.getElementById('dropDown4').value;
+                        var URL = 'http://localhost:3000/' + option1 + '/' + option2 + '/' + option3 + '/' + option4;
+                        window.location.href = 'http://localhost:3000/' + option1 + '/' + option2 + '/' + option3 + '/' + option4;
                         }
                     p.
                         Select the industry you would like to view:
                     select#dropDown1
-                        option(value='') --Select One--
+                        option(value='x') --View All--
                         option(value='taxi') Taxi
                         option(value='beauty') Beauty
                         option(value='cleaning') Cleaning
@@ -96,25 +97,32 @@ block body
                         option(value='maintenancerepair') Maintenance
 
                     p.
-                        Select the license status you would like to view:
+                        Select the business status you would like to view:
                     select#dropDown2
-                        option(value='') --Select One--
+                        option(value='x') --View All--
+                        option(value='GOOD') Good
+                        option(value='BAD') Bad
+                    p.
+                        Select the license status you would like to view:
+                    select#dropDown3
+                        option(value='x') --View All--
                         option(value='CANCELLED') Cancelled
                         option(value='RENEWED') Renewed
                         option(value='EXPIRED') Expired
                         option(value='ISSUED') Issued
                     p.
                         Select the business status you would like to view:
-                    select#dropDown3
-                        option(value='') --Select One--
+                    select#dropDown4
+                        option(value='x') --View All--
                         option(value='Open') Open
                         option(value='Closed') Closed
                     button(onclick='getURL(); return false;') Submit
                     br
-                    table(width='130%', cellpadding="10", cellspacing="0", border="2").table.table-striped
+                    table(width='130%', cellpadding="10", cellspacing="10", border="0").table.table-striped
                         tr
                             th Entry#
                             th Business Name
+                            th Cluster Quality
                             th Start Date
                             th End Date
                             th License Status
@@ -125,6 +133,7 @@ block body
                                 tr
                                     td= z
                                     td= entry['Business Name']
+                                    td= entry['Good Cluster']
                                     td= entry['Business Start Date']
                                     td= entry['Business Close Date']
                                     td= entry['Current License Status']

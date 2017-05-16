@@ -23,24 +23,47 @@ router.get('/', function(req, res) {
     });
 });
 
-router.get('/:cluster/:license/:status', function(req, res) {
+router.get('/:cluster/:quality/:license/:status', function(req, res) {
 
     var results_from_mongo = [];
     var db = req.db;
     var collection = db.get('clustered');
     var str = db.collection('clustered').find();
     var cluster = req.params.cluster;
+    var quality = req.params.quality;
     var license = req.params.license;
     var status = req.params.status;
     if(status == "Open"){
       status = "";
     }
-    else{
+    else if(status == "Closed"){
       status = {$ne:""};
     }
-    if(cluster=='taxi'){
+    else{
+      status = {$ne:"#"};
+    }
+    if(quality == "x"){
+      quality = {$ne:"#"}
+    }
+    if(license == "x"){
+      license = {$ne:"#"}
+    }
+    else{
+      license = "LISENCE" + req.params.license;
+    }
+    if(cluster == "x"){
+      cluster = {$ne:"#"}
+      collection.find({$and:[{"Cluster Label" : cluster},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
+
+        results_from_mongo.push(docs);
+        res.render('index', {
+            'stuff': results_from_mongo
+        });
+      });
+    }
+    else if(cluster=='taxi'){
       cluster = "TAXI/DRIVER";
-      collection.find({$and:[{"Cluster Label" : cluster},{"Current License Status" : "LICENSE " + license}, {"Business Close Date":status}]},{},function(e,docs){
+      collection.find({$and:[{"Cluster Label" : cluster},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
 
         results_from_mongo.push(docs);
         res.render('index', {
@@ -49,7 +72,7 @@ router.get('/:cluster/:license/:status', function(req, res) {
       });
     }
     else if(cluster == 'cleaning'){
-      collection.find({$and:[{$or:[{"Cluster Label" : "CLEANING"},{"Cluster Label" : "JANITORIAL"}]},{"Current License Status" : "LICENSE " + license}, {"Business Close Date":status}]},{},function(e,docs){
+      collection.find({$and:[{$or:[{"Cluster Label" : "CLEANING"},{"Cluster Label" : "JANITORIAL"}]},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
 
         results_from_mongo.push(docs);
         res.render('index', {
@@ -58,7 +81,7 @@ router.get('/:cluster/:license/:status', function(req, res) {
       });
     }
     else if(cluster == 'beauty'){
-      collection.find({$and:[{$or:[{"Cluster Label" : "HAIR/STYLIST"},{"Cluster Label" : "BEAUTY/SALON"},{"Cluster Label" : "SALON/HAIR"}]},{"Current License Status" : "LICENSE " + license}, {"Business Close Date":status}]},{},function(e,docs){
+      collection.find({$and:[{$or:[{"Cluster Label" : "HAIR/STYLIST"},{"Cluster Label" : "BEAUTY/SALON"},{"Cluster Label" : "SALON/HAIR"}]},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
 
         results_from_mongo.push(docs);
         res.render('index', {
@@ -67,7 +90,7 @@ router.get('/:cluster/:license/:status', function(req, res) {
       });
     }
     else if(cluster == 'food'){
-      collection.find({$and:[{$or:[{"Cluster Label" : "FOOD"},{"Cluster Label" : "RESTAURANT"}]},{"Current License Status" : "LICENSE " + license}, {"Business Close Date":status}]},{},function(e,docs){
+      collection.find({$and:[{$or:[{"Cluster Label" : "FOOD"},{"Cluster Label" : "RESTAURANT"}]},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
 
         results_from_mongo.push(docs);
         res.render('index', {
@@ -76,7 +99,7 @@ router.get('/:cluster/:license/:status', function(req, res) {
       });
     }
     else if(cluster == 'maintenancerepair'){
-        collection.find({$and:[{$or:[{"Cluster Label" : "REPAIR"},{"Cluster Label" : "MAINTENANCE"}]},{"Current License Status" : "LICENSE " + license}, {"Business Close Date":status}]},{},function(e,docs){
+        collection.find({$and:[{$or:[{"Cluster Label" : "REPAIR"},{"Cluster Label" : "MAINTENANCE"}]},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
 
           results_from_mongo.push(docs);
           res.render('index', {
@@ -86,7 +109,7 @@ router.get('/:cluster/:license/:status', function(req, res) {
     }
     else if(cluster=='CommercialRental'){
       cluster = "COMMERCIAL/RENTAL";
-      collection.find({$and:[{"Cluster Label" : cluster},{"Current License Status" : "LICENSE " + license}, {"Business Close Date":status}]},{},function(e,docs){
+      collection.find({$and:[{"Cluster Label" : cluster},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
 
         results_from_mongo.push(docs);
         res.render('index', {
@@ -96,7 +119,7 @@ router.get('/:cluster/:license/:status', function(req, res) {
     }
     else if(cluster=='ResidentialRental'){
       cluster = "RESIDENTIAL/RENTAL";
-      collection.find({$and:[{"Cluster Label" : cluster},{"Current License Status" : "LICENSE " + license}, {"Business Close Date":status}]},{},function(e,docs){
+      collection.find({$and:[{"Cluster Label" : cluster},{"Good Cluster": quality},{"Current License Status" : license}, {"Business Close Date":status}]},{},function(e,docs){
 
         results_from_mongo.push(docs);
         res.render('index', {
