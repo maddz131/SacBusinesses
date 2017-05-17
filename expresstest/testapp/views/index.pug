@@ -1,0 +1,140 @@
+
+extends layout
+
+block body
+
+    style.
+        .row.content {
+            height: 1500px
+        }
+        .sidenav {
+            background-color: rgba(45, 119, 119, 0.75);
+            height: 100%;
+            width:10%
+            float:left;
+            position: fixed;
+            z-index:1;
+        }
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .row.content {
+                height: auto;
+            }
+        }
+        h2 {
+            font-family: monospace;
+            font-weight: bold;
+            color: black;
+        }
+        a {
+            color: white;
+        }
+        h3 {
+            color: #333;
+        }
+        h3 small {
+            color: white;
+        }
+        #page {
+            position: relative;
+            width: 75%;
+            height: 3000px;
+            float:right;
+            overflow: auto;
+        }
+
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        .container-fluid
+            .navbar-header
+                a.navbar-brand Sacramento's Booming Business
+            #navbar.navbar-collapse.collapse(aria-expanded='false', style='height: 1px;')
+
+    .container-fluid
+        .row.content
+            .col-sm-3.sidenav
+                h2
+                br
+                h3 Data Mart
+                h3
+                    a(href='http://localhost:5000/heatmap')
+                        | Heat Map
+                        small (2017 Growth)
+                h3
+                    a(href='http://localhost:5000')
+                        | Business Forecast:
+
+            #page
+                .col-sm-9
+                    h2.
+                        Data Mart
+
+                    script.
+                        var getURL = function(){
+                        var option1 = document.getElementById('dropDown1').value;
+                        var option2 = document.getElementById('dropDown2').value;
+                        var option3 = document.getElementById('dropDown3').value;
+                        var option4 = document.getElementById('dropDown4').value;
+                        var URL = 'http://localhost:3000/' + option1 + '/' + option2 + '/' + option3 + '/' + option4;
+                        window.location.href = 'http://localhost:3000/' + option1 + '/' + option2 + '/' + option3 + '/' + option4;
+                        }
+                    p.
+                        Select the industry you would like to view:
+                    select#dropDown1
+                        option(value='x') --View All--
+                        option(value='taxi') Taxi
+                        option(value='beauty') Beauty
+                        option(value='cleaning') Cleaning
+                        option(value='ResidentialRental') Residential Rental
+                        option(value='food') Food
+                        option(value='maintenancerepair') Maintenance
+
+                    p.
+                        Select the business status you would like to view:
+                    select#dropDown2
+                        option(value='x') --View All--
+                        option(value='GOOD') Good
+                        option(value='BAD') Bad
+                    p.
+                        Select the license status you would like to view:
+                    select#dropDown3
+                        option(value='x') --View All--
+                        option(value='CANCELLED') Cancelled
+                        option(value='RENEWED') Renewed
+                        option(value='EXPIRED') Expired
+                        option(value='ISSUED') Issued
+                    p.
+                        Select the business status you would like to view:
+                    select#dropDown4
+                        option(value='x') --View All--
+                        option(value='Open') Open
+                        option(value='Closed') Closed
+                    button(onclick='getURL(); return false;') Submit
+                    br
+                    table(width='130%', cellpadding="10", cellspacing="10", border="0").table.table-striped
+                        tr
+                            th Entry#
+                            th Business Name
+                            th Cluster Quality
+                            th Start Date
+                            th End Date
+                            th License Status
+                            th Industry
+
+                        each mongo_result, i in stuff
+                            each entry, z in mongo_result
+                                tr
+                                    td= z
+                                    td= entry['Business Name']
+                                    td= entry['Good Cluster']
+                                    td= entry['Business Start Date']
+                                    td= entry['Business Close Date']
+                                    td= entry['Current License Status']
+                                    td= entry['Business Description']

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: rgba(45, 119, 119, 0.75);
+      height: 100%;
+      width:10%
+      float:left;
+      position: fixed;
+      z-index:1;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+    h2{
+      font-family: monospace;
+      font-weight: bold;
+      color: black;
+    }
+    a{
+      color: white;
+    }
+
+    h3{
+      color: #333;
+    }
+    h3 small{
+      color: white;
+    }
+    #page {
+    position: relative;
+    width: 75%;
+    height: 3000px;
+    float:right;
+    overflow: auto;
+    /*background-color: yellow;*/
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+          </button><a href="#" class="navbar-brand">Sacramento's Booming Business</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          </div>
+        </div>
+  </nav>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h2></h2><br>
+      <h3><a href="http://localhost:3000">Data Mart</a></h3>
+      <h3><a href="http://localhost:5000/heatmap">Heat Map <small>(2017 Growth)</small></a></h3>
+
+        <h3>Business Forecast:</h3>
+<ul class="nav nav-pills nav-stacked">
+  <ul>
+        <li><a href="#Total Business Growth">Total Business Growth</a></li>
+        <li><a href="#Consulting">Consulting</a></li>
+        <li><a href="#Cleaning">Cleaning</a></li>
+        <li><a href="#Beauty-Salon">Beauty-Salon</a></li>
+        <li><a href="#Commercial-Rental">Commercial-Rental</a></li>
+        <li><a href="#Auto">Auto</a></li>
+        <li><a href="#Adult Entertainer">Adult Entertainer</a></li>
+        <li><a href="#Repair">Repair</a></li>
+        <li><a href="#Restaurant">Restaurant</a></li>
+        <li><a href="#Massage">Massage</a></li>
+        <li><a href="#Maintenance">Maintenance</a></li>
+
+      </ul></ul><br>
+    </div>
+
+
+<div id=page>
+
+    <div class="col-sm-9">
+
+      <a name = "Total Business Growth"></a>
+      <h2>Total Business Growth</h2>
+      <h2>Total Business Growth</h2>
+      <img src="static/images/GENERAL.png" alt="GENERAL" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Consulting"></a>
+      <h2>Consulting</h2>
+      <img src="static/images/CONSULTING.png" alt="Consulting" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Cleaning"></a>
+      <h2>Cleaning</h2>
+      <img src="static/images/CLEANING.png" alt="Cleaning" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Beauty-Salon"></a>
+      <h2>Beauty-Salon</h2>
+      <img src="static/images/BEAUTY-SALON.png" alt="BEAUTY-SALON" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Commercial-Rental"></a>
+      <h2>Commercial-Rental</h2>
+      <img src="static/images/COMMERCIAL-RENTAL.png" alt="COMMERCIAL-RENTAL" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Auto"></a>
+      <h2>Auto</h2>
+      <img src="static/images/AUTO.png" alt="Auto" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Adult Entertainer"></a>
+      <h2>Adult Entertainer</h2>
+      <img src="static/images/ENTERTAINER-ADULT.png" alt="ENTERTAINER-ADULT" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Repair"></a>
+      <h2>Repair</h2>
+      <img src="static/images/REPAIR.png" alt="Repair" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Restaurant"></a>
+      <h2>Restaurant</h2>
+      <img src="static/images/RESTAURANT.png" alt="RESTAURANT" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Massage"></a>
+      <h2>Massage</h2>
+      <img src="static/images/MASSAGE.png" alt="Massage" style="width:100%;">
+      <br><br>
+
+      <hr>
+      <a name = "Maintenance"></a>
+      <h2>Maintenance</h2>
+      <img src="static/images/MAINTENANCE.png" alt="Maintenance" style="width:100%;">
+      <br><br>
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

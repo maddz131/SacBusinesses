@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Queries</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.w3schools.com/lib/w3data.js"></script>
+<style>
+
+/*.content {
+    border: 1px solid black;
+    background-color: lightblue;
+    width: 50%;
+    padding-top: 50px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}*/
+</style>
+<body>
+
+<div class = "heads">
+  <h2>Data Mart:</h2>
+</div>
+
+
+<!--<div class="btn-group">
+      <button class="btn">business category</button>
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+       <li><a tabindex="-1" href="#">Item I</a></li>
+       <li><a tabindex="-1" href="#">Item II</a></li>
+       <li><a tabindex="-1" href="#">Item III</a></li>
+       <li class="divider"></li>
+       <li><a tabindex="-1" href="#">Other</a></li>
+    </ul>
+</div>-->
+
+<div class = "content">
+  <br><br>
+  {{html|safe}}
+</div>
+
+</table>
+  <ol align="left">
+    {% set counter = 0 -%}
+    {% for num in data -%}
+    <li>{{ num }}</a></li>
+    {% set counter = counter + 1 -%}
+    {% endfor -%}
+  </ol>
+</body>
+</html>
